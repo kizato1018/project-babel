@@ -44,10 +44,13 @@ inputField.addEventListener('keypress', async (e) => {
     }
 });
 
+const API_URL = "http://35.212.243.123:3000";
+
 async function sendCommand(action) {
     const startTime = Date.now();
     try {
-        const response = await fetch('/game/action', {
+        // 修改 fetch 的網址，加上 API_URL
+        const response = await fetch(`${API_URL}/game/action`, { 
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

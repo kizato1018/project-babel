@@ -7,6 +7,11 @@ const fs = require('fs');
 const path = require('path');
 const db = require('./database');
 
+fastify.register(require('@fastify/cors'), {
+    origin: '*', // 開發階段允許所有來源。正式上線可改成您的 GitHub Pages 網址
+    methods: ['GET', 'POST']
+});
+
 // --- 限制 2: 請求頻率限制 (每秒 20 次) ---
 fastify.register(require('@fastify/rate-limit'), {
     max: 20,
@@ -22,11 +27,6 @@ fastify.addHook('onSend', (request, reply, payload, done) => {
     } else {
         done(null, payload);
     }
-});
-
-fastify.register(require('@fastify/static'), {
-    root: path.join(__dirname, '../../public'),
-    prefix: '/',
 });
 
 fastify.register(require('@fastify/websocket'));
