@@ -60,31 +60,19 @@ function runPlayerScript(code, context) {
         // 6. 讀取結果 (Copy Out)
         const result = JSON.parse(resultStr);
 
-        // 7. 計算消耗 (Ticks)
-        const end = process.hrtime.bigint();
-        const durationNs = end - start;
-        const durationMs = Number(durationNs) / 1e6;
-        const ticks = Math.ceil(durationMs); // 1 Tick = 1 ms
-
         return {
             success: true,
             result: result.message,
             updatedPlayer: result.player, // 這是玩家改過的新狀態
             metrics: {
-                ticks: ticks,
                 memory: 0 // IVM 難以精確取得單次執行記憶體，暫時忽略
             }
         };
 
     } catch (error) {
-        // 就算失敗，也要計算時間消耗
-        const end = process.hrtime.bigint();
-        const durationMs = Number(end - start) / 1e6;
-        
         return { 
             success: false, 
-            error: error.message,
-            metrics: { ticks: Math.ceil(durationMs) }
+            error: error.message
         };
     }
 }
