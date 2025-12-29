@@ -44,7 +44,7 @@ inputField.addEventListener('keypress', async (e) => {
     }
 });
 
-const API_URL = "http://35.212.243.123:3000";
+const API_URL = "https://project-babel.ddns.net:3000/";
 
 async function sendCommand(action) {
     const startTime = Date.now();
