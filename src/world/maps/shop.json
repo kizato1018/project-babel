@@ -1,0 +1,9 @@
+{
+  "id": "shop",
+  "name": "地下黑市",
+  "description": "這裡陰暗潮濕，一個穿著斗篷的商人坐在角落，身後堆滿了發光的硬碟。",
+  "exits": {
+    "south": "spawn"
+  },
+  "script_file": "shop.js"
+}

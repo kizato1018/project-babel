@@ -1,0 +1,7 @@
+{
+  "id": "arena",
+  "name": "地下競技場",
+  "description": "空氣中瀰漫著鐵鏽味。一隻巨大的 'Bug' 怪物擋在路中間。",
+  "exits": { "south": "shop" },
+  "script_file": "arena.js"
+}

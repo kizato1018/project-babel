@@ -1,0 +1,111 @@
+body {
+    background-color: #050a0e;
+    color: #00ff41;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0; /* 移除 padding，讓 HUD 貼頂 */
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 頂部 HUD */
+#hud-bar {
+    background: #0d1117;
+    border-bottom: 2px solid #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.hud-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.label { color: #888; }
+.unit { font-size: 12px; color: #666; }
+
+/* 電量條 */
+.bar-container {
+    width: 100px;
+    height: 10px;
+    background: #333;
+    border: 1px solid #555;
+    margin-left: 5px;
+}
+#battery-bar {
+    height: 100%;
+    background-color: #00ff41;
+    transition: width 0.3s ease, background-color 0.3s;
+}
+
+/* 狀態燈 */
+.status-ok { color: #00ff41; text-shadow: 0 0 5px #00ff41; }
+.status-warn { color: #ffcc00; }
+.status-err { color: #ff0000; text-shadow: 0 0 5px #ff0000; blink: 1s; }
+
+/* 遊戲主容器 */
+#game-container {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#output-log {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    padding-right: 10px;
+}
+
+/* 捲軸美化 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #333; }
+::-webkit-scrollbar-thumb:hover { background: #00ff41; }
+
+.input-line {
+    display: flex;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+.prompt { margin-right: 10px; color: #00ff41; }
+input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none;
+}
+
+/* 訊息樣式 */
+.user-msg { color: #fff; margin-top: 5px; opacity: 0.8; }
+.server-msg { color: #00ff41; margin-bottom: 10px; }
+.cost-msg { color: #666; font-size: 12px; margin-bottom: 5px; display: block; }
+.error-msg { color: #ff3333; }
+.system-msg { color: #444; font-style: italic; }
+
+.crt-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 999;
+}

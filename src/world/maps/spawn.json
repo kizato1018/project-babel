@@ -1,0 +1,9 @@
+{
+  "id": "spawn",
+  "name": "起源大廳",
+  "description": "這是一切的開始。四周漂浮著綠色的代碼碎片，地板上刻著 'Hello World'。",
+  "exits": {
+    "north": "shop"
+  },
+  "script_file": "spawn.js"
+}

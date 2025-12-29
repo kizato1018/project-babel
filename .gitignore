@@ -1,0 +1,5 @@
+node_modules/
+data/
+project-babel/
+.env
+.DS_Store

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Babel - Uplink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    
+    <div id="hud-bar">
+        <div class="hud-item">
+            <span class="label">USER:</span> <span id="player-id">GUEST</span>
+        </div>
+        <div class="hud-item">
+            <span class="label">PWR:</span> 
+            <span id="battery-val">1000</span> <span class="unit">TICKS</span>
+            <div class="bar-container"><div id="battery-bar" style="width: 100%;"></div></div>
+        </div>
+        <div class="hud-item">
+            <span class="label">SIGNAL:</span> <span id="status-indicator" class="status-ok">ONLINE</span>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <div id="output-log">
+            <div class="system-msg">正在建立神經連結... 同步率 100%。</div>
+            <div class="system-msg">歡迎來到 Project Babel。物理限制已生效。</div>
+            <br>
+        </div>
+        
+        <div class="input-line">
+            <span class="prompt">user@babel:~$</span>
+            <input type="text" id="command-input" autocomplete="off" autofocus>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
