@@ -14,10 +14,6 @@ const crypto = require('crypto');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 // ----------------
-const { runPlayerScript } = require('./sandbox');
-const fs = require('fs');
-const path = require('path');
-const db = require('./database');
 
 // ★ 請設定一個秘密金鑰，之後要在 GitHub 網頁填入一樣的
 const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
