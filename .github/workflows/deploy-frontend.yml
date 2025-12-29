@@ -1,6 +1,7 @@
 name: Deploy Frontend to Pages
 
 on:
+  workflow_dispatch:
   push:
     branches: ["main"]
     paths: ["public/**"] # 只有改到 public 資料夾才觸發
